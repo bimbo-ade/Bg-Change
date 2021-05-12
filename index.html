@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title> NavBar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cont">
+        <header>
+            <img src="logo.JPG.webp" class="logo" width="50px">
+            <nav>
+                <ul class="navlink">
+                    <li><a href="#"> Home</a></li>
+                    <li><a href="#"> About</a></li>
+                    <li><a href="#"> Products</a></li>
+                    <li><a href="#"> Our Team</a></li>
+
+                </ul>
+            </nav>
+            <a class="cta" href="#"> <button class="btn1"> Contact</button></a>
+
+        </header>
+        <div class="container">
+            <div class="tops">
+                <h1>Love of the GREEN: </h1>
+                <p>Experience mother nature at her peak and bliss</p>
+                <button class="btn2"> Explore More!</button>
+            </div>
+        </div>
+
+        <div class="picWrap">
+            <img src="left-arrow.png" id="leftarrow" width="18px" height="17px" onclick="arrowPress('left')">
+            <div class=" images">
+                <img src="tree.jpg" class="active thumbnail">
+                <img src="redflower.jpg" class="thumbnail">
+                <img src="house.jpg" class="thumbnail">
+                <img src="ocean.jpg" class="thumbnail">
+                <img src="moutwt.jpg" class="thumbnail">
+            </div>
+            <img src="right-arrow.png" id="rightarrow" width="20px" height="17px" onclick="arrowPress('right')">
+
+        </div>
+    </div>
+    <script>
+        const images = document.getElementsByClassName('thumbnail')
+        let active = 0
+        const imagesCount = 5
+        function arrowPress(direction) {
+            let neighbor
+            if (direction == 'left') {
+                if (active === 0) {
+                    return
+                }
+
+                neighbor = active
+                active -= 1
+            }
+
+            if (direction == 'right') {
+                if (active + 1 === 5) {
+
+                    return
+                }
+
+                neighbor = active
+                active += 1
+            }
+
+            images[active].classList.add('active')
+            images[neighbor].classList.remove('active')
+            document.querySelector('body').style.backgroundImage = `url(${images[active].src})`
+        }
+    </script>
+</body>
+
+</html>
