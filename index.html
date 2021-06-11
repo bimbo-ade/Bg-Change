@@ -32,47 +32,18 @@
         </div>
 
         <div class="picWrap">
-            <img src="left-arrow.png" id="leftarrow" width="18px" height="17px" onclick="arrowPress('left')">
+            <img src="left-arrow.png" id="leftarrow" width="18px" height="17px">
             <div class=" images">
-                <img src="tree.jpg" class="active thumbnail">
-                <img src="redflower.jpg" class="thumbnail">
-                <img src="house.jpg" class="thumbnail">
-                <img src="ocean.jpg" class="thumbnail">
-                <img src="moutwt.jpg" class="thumbnail">
+                <img src="tree.jpg" id="thumbnail">
+
             </div>
-            <img src="right-arrow.png" id="rightarrow" width="20px" height="17px" onclick="arrowPress('right')">
+            <img src="right-arrow.png" id="rightarrow" width="20px" height="17px">
 
         </div>
     </div>
-    <script>
-        const images = document.getElementsByClassName('thumbnail')
-        let active = 0
-        const imagesCount = 5
-        function arrowPress(direction) {
-            let neighbor
-            if (direction == 'left') {
-                if (active === 0) {
-                    return
-                }
+    <script src="script.js">
 
-                neighbor = active
-                active -= 1
-            }
 
-            if (direction == 'right') {
-                if (active + 1 === 5) {
-
-                    return
-                }
-
-                neighbor = active
-                active += 1
-            }
-
-            images[active].classList.add('active')
-            images[neighbor].classList.remove('active')
-            document.querySelector('body').style.backgroundImage = `url(${images[active].src})`
-        }
     </script>
 </body>
 
