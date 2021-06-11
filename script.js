@@ -20,7 +20,7 @@ function images() {
 
 }
 backArrow.addEventListener('click', function () {
-  // var imgg = img[imgCount];
+
   imgCount--
   if (imgCount < 0) {
     imgCount = img.length - 1
@@ -30,7 +30,6 @@ backArrow.addEventListener('click', function () {
 })
 
 frontArrow.addEventListener('click', function () {
-  //var imgg = img[imgCount];
   imgCount++
 
   if (imgCount > img.length - 1) {
